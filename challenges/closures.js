@@ -42,11 +42,11 @@ function noOperationCalc() {
 
 function challenge1() {
   let calc = noOperationCalc();
-  assertEqual(calc.screen(), '0');
+  assertEqual(calc.screen(), '0', 'Noop 1');
   calc.press('3');
-  assertEqual(calc.screen(), '3');
+  assertEqual(calc.screen(), '3', 'Noop 2');
   calc.press('4');
-  assertEqual(calc.screen(), '34');
+  assertEqual(calc.screen(), '34', 'Noop 3');
 }
 
 challenge1();
@@ -106,19 +106,19 @@ function calculator() {
 
 function challenge2() {
   let calc = calculator();
-  assertEqual(calc.screen(), '0');
+  assertEqual(calc.screen(), '0', 'Calc 1');
   calc.press('3');
-  assertEqual(calc.screen(), '3');
+  assertEqual(calc.screen(), '3', 'Calc 2');
   calc.press('4');
-  assertEqual(calc.screen(), '34');
+  assertEqual(calc.screen(), '34', 'Calc 3');
   calc.press('+');
-  assertEqual(calc.screen(), '34');
+  assertEqual(calc.screen(), '34', 'Calc 4');
   calc.press('3');
-  assertEqual(calc.screen(), '3');
+  assertEqual(calc.screen(), '3', 'Calc 5');
   calc.press('0');
-  assertEqual(calc.screen(), '30');
+  assertEqual(calc.screen(), '30', 'Calc 6');
   calc.press('=');
-  assertEqual(calc.screen(), '64');
+  assertEqual(calc.screen(), '64', 'Calc 7');
 
   calc = calculator();
   calc.press('3');
@@ -127,11 +127,11 @@ function challenge2() {
   calc.press('3');
   calc.press('0');
   calc.press('-');
-  assertEqual(calc.screen(), '64');
+  assertEqual(calc.screen(), '64', 'Calc 8');
   calc.press('1');
-  assertEqual(calc.screen(), '1');
+  assertEqual(calc.screen(), '1', 'Calc 9');
   calc.press('=');
-  assertEqual(calc.screen(), '63');
+  assertEqual(calc.screen(), '63', 'Calc 10');
 }
 
 challenge2();

@@ -43,10 +43,10 @@ function bombJuggler(numBombs) {
 
 const juggler = bombJuggler(3);
 
-assertEqual(juggler.length, 3);
-assertEqual(juggler[0], bomb);
-assertEqual(juggler[1], bomb);
-assertEqual(juggler[2], bomb);
+assertEqual(juggler.length, 3, 'Juggler 1');
+assertEqual(juggler[0], bomb, 'Juggler 2');
+assertEqual(juggler[1], bomb, 'Juggler 3');
+assertEqual(juggler[2], bomb, 'Juggler 4');
 
 
 /**
@@ -60,10 +60,10 @@ function makeBox() {
 }
 
 const box = makeBox();
-assertEqual(box.isEmpty(), true);
+assertEqual(box.isEmpty(), true, 'Make Box 1');
 box.addItem(bomb);
-assertEqual(box.isEmpty(), false);
-assertEqual(box.getContents(), bomb);
+assertEqual(box.isEmpty(), false, 'Make Box 2');
+assertEqual(box.getContents(), bomb, 'Make Box 3');
 
 /**
  * Challenge 3: Bomb Disposal
@@ -81,9 +81,9 @@ function disposeBomb(bomb) {
 
 }
 
-assertEqual(bombCalled, false);
+assertEqual(bombCalled, false, 'Dispose Bomb 1');
 disposeBomb(disposableBomb);
-assertEqual(bombCalled, true);
+assertEqual(bombCalled, true, 'Dispose Bomb 2');
 
 
 /**
@@ -105,37 +105,44 @@ const calculatorUtils = {
 
 assertEqual(
   calculatorUtils.add(3, 6),
-  9
+  9,
+  'Calculator Utils 1'
 );
 
 assertEqual(
   calculatorUtils.subtract(3, 6),
-  -3
+  -3,
+  'Calculator Utils 2'
 );
 
 assertEqual(
   calculatorUtils.multiply(3, 6),
-  18
+  18,
+  'Calculator Utils 3'
 );
 
 assertEqual(
   calculatorUtils.negate(4),
-  -4
+  -4,
+  'Calculator Utils 4'
 );
 
 assertEqual(
   calculatorUtils.negate(-3),
-  3
+  3,
+  'Calculator Utils 5'
 );
 
 assertEqual(
   calculatorUtils.absoluteValue(-3),
-  3
+  3,
+  'Calculator Utils 6'
 );
 
 assertEqual(
   calculatorUtils.absoluteValue(4),
-  4
+  4,
+  'Calculator Utils 7'
 );
 
 // `mod` refers to modular arithmetic. `mod(12, 5)` is the remainder when 12 is
@@ -144,17 +151,20 @@ assertEqual(
 // Also: Handling invalid cases is not required for this exercise.
 assertEqual(
   calculatorUtils.mod(12, 5),
-  2
+  2,
+  'Calculator Utils 8'
 );
 
 assertEqual(
   calculatorUtils.mod(12, 12),
-  0
+  0,
+  'Calculator Utils 9'
 );
 
 assertEqual(
   calculatorUtils.mod(-2, 5),
-  3
+  3,
+  'Calculator Utils 10'
 );
 
 

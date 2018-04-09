@@ -84,8 +84,8 @@ function numArguments() {
 
 }
 
-assertEqual(numArguments(), 0);
-assertEqual(numArguments(3, 4, 5), 3);
+assertEqual(numArguments(), 0, 'Num Arguments 1');
+assertEqual(numArguments(3, 4, 5), 'Num Arguments 2');
 
 /**
  * Challenge 2: Bad Add
@@ -99,10 +99,12 @@ function badAdd(x, y) {
 
 assertEqual(
   badAdd(8, 3),
-  -2
+  -2,
+  'Bad Add 1'
 );
 
 assertEqual(
   badAdd('hoo boy!', 5),
-  0
+  0,
+  'Bad Add 2'
 );
