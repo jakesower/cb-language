@@ -18,13 +18,13 @@ const heterogenous = [1, "Oh hai", function (x, y) { return x + y; }];
 
 // Iteration
 
-for(let i = 0, l = oneTwoThree.length; i < l; i += 1) {
+for (let i = 0, l = oneTwoThree.length; i < l; i += 1) {
   console.log(oneTwoThree[i]);
 }
 
 // Note the use of `of` and not `in`. The latter will not behave as you expect
 // it to and will cause headache.
-for(elt of oneTwoThree) {
+for (elt of oneTwoThree) {
   console.log(elt);
 }
 
