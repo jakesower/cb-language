@@ -46,9 +46,8 @@ assertEqual(
  * should be a rare thing.
  */
 
-function argumentAdd() {
+function argumentAdd(...args) {
   // coerce the strange argument beast into a simple array
-  const args = Array.from(arguments);
   const x = args[0] || 0;
   const y = args[1] || 0;
   return x + y;
@@ -76,35 +75,13 @@ assertEqual(
 
 
 /**
- * Challenge 1: Argument Counting
+ * Challenge: Argument Counting
  * Write a function that returns the number of arguments passed to it.
  */
 
-function numArguments() {
+function numArguments(...args) {
 
 }
 
 assertEqual(numArguments(), 0, 'Num Arguments 1');
-assertEqual(numArguments(3, 4, 5), 'Num Arguments 2');
-
-/**
- * Challenge 2: Bad Add
- * Write a function that calls the add function, but with the first argument
- * set to -5.
- */
-
-function badAdd(x, y) {
-  // invoke `add` in here
-}
-
-assertEqual(
-  badAdd(8, 3),
-  -2,
-  'Bad Add 1'
-);
-
-assertEqual(
-  badAdd('hoo boy!', 5),
-  0,
-  'Bad Add 2'
-);
+assertEqual(numArguments(3, 4, 5), 3, 'Num Arguments 2');
