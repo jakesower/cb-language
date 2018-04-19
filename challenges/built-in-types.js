@@ -108,8 +108,8 @@ Object.keys(simpleObject); // could return ['a', 'b'] or ['b', 'a']
 Object.values(simpleObject); // likewise could return [1, 2] or [2, 1]
 
 // Function to deal with this limitation
-function sortedKeys(ary) {
-  return ary.slice(0).sort(); // slice(0) clones the array
+function sortedKeys(obj) {
+  return Object.keys(obj).slice(0).sort(); // slice(0) clones the array
 }
 
 
