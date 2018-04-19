@@ -46,7 +46,18 @@ assertEqual(resto, [2, 3]);
  */
 
 function doubleElements(ary) {
+  // the way I'd really do it
+  return ary.reduce((acc, elt) => acc.concat([elt, elt]), []);
+}
 
+function doubleElements2(ary) {
+  // the way I'd do it without reduce
+  let out = [];
+  for (elt of ary) {
+    out.push(elt);
+    out.push(elt);
+  }
+  return out;
 }
 
 assertEqual(
@@ -108,8 +119,8 @@ Object.keys(simpleObject); // could return ['a', 'b'] or ['b', 'a']
 Object.values(simpleObject); // likewise could return [1, 2] or [2, 1]
 
 // Function to deal with this limitation
-function sortedKeys(ary) {
-  return ary.slice(0).sort(); // slice(0) clones the array
+function sortedKeys(obj) {
+  return Object.keys(obj).slice(0).sort(); // slice(0) clones the array
 }
 
 
@@ -121,7 +132,19 @@ function sortedKeys(ary) {
  */
 
 function toPairs(obj) {
-  // use `sortedKeys` in here
+  // actual way I'd do it
+  const keys = sortedKeys(obj);
+  return keys.map(k => [k, obj[k]]);
+}
+
+function toPairs2(obj) {
+  // without higher order functions
+  const out = [];
+  const keys = sortedKeys(obj);
+  for (key of keys) {
+    out.push([key, obj[key]]);
+  }
+  return out;
 }
 
 assertEqual(

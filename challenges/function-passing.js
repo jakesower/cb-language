@@ -41,12 +41,8 @@ function bombJuggler(numBombs) {
 
 }
 
-const juggler = bombJuggler(3);
-
-assertEqual(juggler.length, 3, 'Juggler 1');
-assertEqual(juggler[0], bomb, 'Juggler 2');
-assertEqual(juggler[1], bomb, 'Juggler 3');
-assertEqual(juggler[2], bomb, 'Juggler 4');
+assertEqual(bombJuggler(1), [bomb], 'Bomb Juggler 1');
+assertEqual(bombJuggler(3), [bomb, bomb, bomb], 'Bomb Juggler 2');
 
 
 /**

@@ -36,7 +36,7 @@ const teamData = {
  */
 
 function getStar(team) {
-
+  // for my actual solutions, see the code from day 2
 }
 
 assertEqual(

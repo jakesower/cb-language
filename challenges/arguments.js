@@ -80,7 +80,7 @@ assertEqual(
  */
 
 function numArguments(...args) {
-
+  return args.length;
 }
 
 assertEqual(numArguments(), 0, 'Num Arguments 1');

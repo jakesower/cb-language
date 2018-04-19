@@ -25,11 +25,11 @@ function noOperationCalc() {
   // key is a digit for this version
   // hint: use concat to append string characters
   function press(key) {
-
+    number = number === '0' ? key : `${number}${key}`;
   }
 
   function screen() {
-
+    return number;
   }
 
   // ES6 Shorthand. It's the same as:
@@ -75,15 +75,25 @@ function calculator() {
 
   /** IMPLEMENT BELOW! *******************************************************/
   const operations = {
-    // implement this if you wish; see challenge 4 in `function-passing`
+    '+': (x, y) => x + y,
+    '-': (x, y) => x - y,
+    '*': (x, y) => x * y,
+    '=': (_, y) => y,
   };
 
   function digitPress(key) {
-    // implement this
+    if (inputting) {
+      number = (number === '0') ? key : `${number}${key}`;
+    } else {
+      inputting = true;
+      number = key;
+    }
   }
 
   function operationPress(key) {
-    // implement this
+    operand = operations[operation](operand, parseInt(number));
+    inputting = false;
+    operation = key;
   }
   /** IMPLEMENT ABOVE! *******************************************************/
 
